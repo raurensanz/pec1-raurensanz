@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Visita Huesca</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+
+  </head>
+  <body>
+    <header class="header-cng">
+      <div class="container flex">
+        <a href="index.html" class="logo">Visita Huesca</a>
+
+        <button type="button" id="header-show-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div id="header-collapse">
+          <button type="button" id="header-close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <ul class="header-nav">
+            <li class="nav-item">
+              <a href="lugares.html" class="nav-link">Lugares</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="enlaces.html" class="nav-link">Enlaces</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="saber-mas.html" class="nav-link">Saber más</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+                <h2>Canfranc</h2>
+                <div id="img-lugar">
+                  <img src="img/Canfranc.jpg" alt="">
+                  <img src="img/Canfranc-2.jpg" alt="">
+                  <img src="img/Canfranc-3.jpg" alt="">
+                </div>
+
+                <p>Sin duda, la Estación Internacional de Canfranc es el edificio insignia de este pueblo pirenaico. Fue inaugurada en las primeras décadas del siglo XX, es un bellísimo ejemplo de la arquitectura industrial de la época y está dotada de una elegancia sorprendente. En la actualidad se realizan visitas guiadas que muestran al visitante el esplendor que todavía conserva.</p>
+                <p>Dada su cercanía a la frontera con Francia, Canfranc ha ejercido históricamente una gran importancia estratégica y militar, de ahí la construcción de diversos fuertes o torreones, como la Torreta de Fusileros o el Fuerte de Coll de Ladrones.</p>
+                <p>También son numerosos los peregrinos que pasan cada año por la villa siguiendo el tramo aragonés del Camino de Santiago Francés. Esta ruta vivió su esplendor en la Edad Media, cinco siglos de peregrinaje que dejaron maravillosas historias y leyendas, además de un legado artístico y cultural de extraordinaria riqueza.</p>
+
+                <div id="map"></div>
+
+            </div>
+            
+        </section>
+
+
+    </main>
+
+    <footer class="py-4">
+      <div class="container footer-row">
+        <div class="footer-item">
+          <a href="index.html" class="logo">Visita Huesca</a>
+          <p class="text">La aventura empieza aquí</p>
+        </div>
+
+        <div class="footer-item">
+          <h3>Síguenos en:</h3>
+          <ul class="social-links">
+            <li>
+              <a href = "#">
+                  <i class = "fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href = "#">
+                  <i class = "fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href = "#">
+                  <i class = "fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href = "#">
+                  <i class = "fab fa-pinterest"></i>
+              </a>
+            </li>
+            <li>
+              <a href = "#">
+                  <i class = "fab fa-google-plus"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class = "footer-item">
+          <h3>Lugares populares:</h3>
+          <ul>
+            <li><a href = "#">Aínsa</a></li>
+            <li><a href = "#">Benasque</a></li>
+            <li><a href = "#">Loarre</a></li>
+          </ul>
+      </div>
+      
+      <div class = "subscribe-form footer-item">
+        <h3>Subscríbete a la newsletter!</h3>
+        <form class = "flex">
+            <input type = "email" placeholder="Introduce el email" class = "form-control">
+            <input type = "submit" class = "btn" value = "Subscríbete">
+        </form>
+      </div>
+
+      </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <script src="map.js"></script>
+  </body>
+</html>

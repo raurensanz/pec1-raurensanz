@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
+:root{
+  --blanco: #FFFFFF;
+  --gris-claro: #F6F6F6;
+  --negro: #2C2C2C;
+  --verde-oscuro: #1F2B0A;
+  --crema: #E8E6E2;
+  --trans: all 0.3s ease-in-out
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+a, img, button {
+  display: block;
+}
+
+body {
+  color: var(--negro);
+  background-color: var(--crema);
+  font-family: 'Poppins', sans-serif;
+
+  
+}
+
+h1{
+  font-family: 'Passion One';
+  font-weight: 300;
+}
+
+
+button, input[type = 'submit']{
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Passion One';
+}
+
+.container{
+  max-width: 1320px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.container h2{
+  padding: 1rem;
+  text-align: center;
+}
+
+.container p{
+  padding: 1rem 0;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HEADER */
+
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  color: var(--blanco);
+  padding: 1rem 0;
+  z-index: 999;
+}
+
+.header .container{
+  justify-content: space-between;
+}
+
+.header a{
+  color: var(--blanco);
+}
+
+.logo{
+  font-family: 'Passion One';
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+#header-show-btn{
+  background: transparent;
+  color: var(--blanco);
+  font-size: 2rem;
+  opacity: 0.9;
+  transition: var(--trans);
+}
+
+#header-show-btn:hover{
+  opacity: 1;
+}
+
+#header-collapse{
+  background-color: var(--verde-oscuro);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  padding: 2rem;
+  transform: translateX(100%);
+  transition: var(--trans);
+}
+
+.header-collapse-rmw{
+    transform: translateX(0)!important;
+}
+
+#header-collapse-btn{
+  background: none;
+  color: var(--blanco);
+  width: 35px;
+  height: 35px;
+  border-radius: 0.2rem;
+  font-size: 2rem;
+  transition: var(--trans);
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
+  border: none;
+}
+
+#header-collapse-btn:hover{
+  background-color: var(--blanco);
+  color: var(--verde-oscuro);
+}
+
+.header-nav{
+  margin-top: 5rem;
+}
+
+.nav-item{
+  margin: 1.6rem 0;
+}
+
+.nav-link{
+  color: var(--blanco);
+  font-size: 1.2rem;
+  -webkit-transition: var(--trans);
+  -o-transition: var(--trans);
+  transition: var(--trans);
+}
+
+.nav-link:hover{
+  opacity: 0.8;
+}
+
+/* SECTION */
+
+#hero{
+  min-height: 100vh;
+  padding-top: 7rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../src/img/Pirineo.jpg") center/cover no-repeat;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+}
+
+section h1{
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+
+/* SCROLL */
+
+.header-cng{
+  background-color: var(--verde-oscuro);
+  box-shadow: 0px 4px 5px 0px rgba(48, 48, 48, 0.2);
+  transition: var(--trans);
+}
+
+.header-cng .logo{
+  color: var(--blanco);
+}
+
+.header-cng #header-show-btn{
+  color: var(--blanco);
+}
+
+/* LUGARES */
+
+.py-4{
+  padding: 4rem 0;
+}
+
+.titulo{
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+
+.lugares-row{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.lugares-item{
+  width: 300px;
+  border-radius: 20px;
+  background-color: var(--blanco);
+  box-shadow: 0 15px 15px rgba(0,0,0,0.2);
+  margin-top: 15px;
+}
+
+.lugares-img{
+  height: 200px;
+}
+
+.lugares-img img{
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.lugares-info{
+  margin: 15px;
+}
+
+.lugares-item h3{
+  font-family: 'Passion One';
+  font-size: 1.5rem;
+}
+
+.lugares-item a{
+  color: var(--verde-oscuro);
+}
+
+.lugares-item h4{
+  font-family: 'Grand Hotel';
+  font-size: 1.5rem;
+}
+
+.ver-mas{
+  text-align: right;
+  margin: 15px;
+}
+
+.ver-mas a{
+  text-decoration: underline;
+  color: var(--verde-oscuro);
+}
+
+
+/* PÁGINA LUGAR */
+
+#img-lugar{
+  height: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#img-lugar img{
+  height: 100%;
+}
+
+#map { 
+  height: 300px; 
+  margin-bottom: 1.5rem;
+}
+
+/* FOOTER */
+
+footer{
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  position: relative;
+}
+footer::before{
+  content: "";
+  position: absolute;
+  background-color: var(--gris-claro);
+  height: 4px;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer .logo{
+  margin-bottom: 1.5rem;
+  display: block;
+  font-size: 2rem!important;
+}
+
+.footer-item{
+  margin: 3rem 0;
+}
+.footer-item a{
+  font-size: 1.2rem;
+  color: #fff;
+  -webkit-transition: var(--trans);
+  -o-transition: var(--trans);
+  transition: var(--trans);
+}
+.footer-item a:hover{
+  color: var(--green);
+}
+.footer-item ul{
+  padding: 0;
+}
+.footer-item h2{
+  margin-bottom: 1.4rem;;
+}
+.social-links{
+  display: flex;
+  justify-content: center;
+}
+.social-links li{
+  margin: 0.5rem;
+}
+.footer-item:nth-child(3) li{
+  margin: 0.5rem 0;
+}
+.footer-item:nth-child(3) a{
+  display: inline-block;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+.subscribe-form form{
+  flex-direction: column;
+}
+.subscribe-form form input{
+  width: 100%;
+  max-width: 300px;
+}
+.subscribe-form .form-control{
+  border-color: rgba(255, 255, 255, 0.3);
+  transition: var(--trans);
+}
+
+
+/* RESPONSIVE */
+@media screen and (min-width: 768px){
+
+  .footer-row{
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px){
+  #header-show-btn{
+    display: none;
+  }
+  #header-collapse{
+    display: block!important;
+    background-color: transparent;
+    transform: translateX(0);
+    height: auto;
+    padding: 0;
+    position: static;
+    width: 100%;
+  }
+  #header-close-btn{
+    display: none;
+  }
+  .header-nav{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+  .nav-item{
+    margin: 0;
+    margin-left: 2rem;
+  }
+  .header-cng .header-nav .nav-link{
+    color: var(--blanco);
+  }
+  
+}
+
+@media screen and (min-width: 1200px){
+  .footer-row{
+      grid-template-columns: repeat(4, 1fr);
+  }
+  
+}
+
