@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8"/>
     <title>Visita Huesca</title>
-    <link rel="stylesheet" href="styles.css" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-    crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <link rel="stylesheet" type="text/css" href="slick.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="header">
       <div class="container flex">
-        <a href="index.html" class="logo">Visita Huesca</a>
+        <a href="index.html" class="logo"><img src="img/logo.svg" alt="logo"></a>
 
         <button type="button" id="header-show-btn">
           <i class="fas fa-bars"></i>
@@ -41,23 +41,62 @@
     </header>
 
     <main>
-      <section class="flex" id="hero">
-        <div class="container">
-          <div class="title">
-            <h1>La aventura empieza aquí</h1>
+      <section class="slider">
+        <div class="slider__slides">
+          <div class="slide s--active">
+            <div class="slide__inner">
+              <div class="slide__content">
+                <h1>La aventura empieza aquí</h1>
+                <p>Visita la provincia de Huesca y descubres todos sus rincones.</p>
+              </div>
+            </div>
           </div>
+          <div class="slide">
+            <div class="slide__inner">
+              <div class="slide__content">
+                <h1>La aventura empieza aquí</h1>
+                <p>Visita la provincia de Huesca y descubres todos sus rincones.</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide__inner">
+              <div class="slide__content">
+                <h1>La aventura empieza aquí</h1>
+                <p>Visita la provincia de Huesca y descubres todos sus rincones.</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide s--prev">
+            <div class="slide__inner">
+                  <div class="slide__inner">
+              <div class="slide__content">
+                <h1>La aventura empieza aquí</h1>
+                <p>Visita la provincia de Huesca y descubres todos sus rincones.</p>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="slider__control">
+          <div class="slider__control-line"></div>
+          <div class="slider__control-line"></div>
+        </div>
+        <div class="slider__control slider__control--right m--right">
+          <div class="slider__control-line"></div>
+          <div class="slider__control-line"></div>
         </div>
       </section>
 
+
       <section id="lugares" class="py-4">
         <div class="container" id="lugares-container">
-          <div class="titulo">
-            <h2>Lugares de interés</h2>
-          </div>
+          <h2 style="margin: 30px;">Lugares de interés</h2>
 
           <div class="lugares-row">
 
-              <div class="lugares-item ">
+              <div class="lugares-item">
                 <div class="lugares-img"><img src="img/Canfranc.jpg" alt=""></div>
                 <div class="lugares-info">
                   <h3><a href="canfranc.html">Canfranc</a></h3>
@@ -96,7 +135,7 @@
     <footer class="py-4">
       <div class="container footer-row">
         <div class="footer-item">
-          <a href="index.html" class="logo">Visita Huesca</a>
+          <a href="index.html" class="logo"><img src="img/logo.svg" alt="logo"></a>
           <p class="text">La aventura empieza aquí</p>
         </div>
 
@@ -132,11 +171,11 @@
         </div>
 
         <div class = "footer-item">
-          <h3>Lugares populares:</h3>
+          <h3>Descubre más:</h3>
           <ul>
-              <li><a href = "#">Aínsa</a></li>
-              <li><a href = "#">Benasque</a></li>
-              <li><a href = "#">Loarre</a></li>
+              <li><a href="lugares.html">Lugares</a></li>
+              <li><a href="enlaces.html">Enlaces</a></li>
+              <li><a href="saber-mas.html">Saber más</a></li>
           </ul>
       </div>
       
@@ -153,10 +192,7 @@
 
 
     <script src="script.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     
-
   </body>
 </html>
