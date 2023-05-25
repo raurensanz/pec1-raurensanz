@@ -27,8 +27,6 @@ body {
   color: var(--negro);
   background-color: var(--crema);
   font-family: 'Poppins', sans-serif;
-
-  
 }
 
 h1{
@@ -84,12 +82,14 @@ button, input[type = 'submit']{
   color: var(--blanco);
 }
 
-.logo{
-  font-family: 'Passion One';
-  font-size: 2.4rem;
-  letter-spacing: 2px;
-  font-weight: 400;
-  opacity: 0.95;
+.header .logo{
+  width: 400px;
+  
+}
+
+.header-cng .logo{
+  width: 400px;
+  
 }
 
 #header-show-btn{
@@ -159,29 +159,217 @@ button, input[type = 'submit']{
   opacity: 0.8;
 }
 
-/* SECTION */
+/* BANNER SLIDER */
 
-#hero{
-  min-height: 100vh;
-  padding-top: 7rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../src/img/Pirineo.jpg") center/cover no-repeat;
-  flex-direction: column;
-  color: #fff;
+.slider {
+  position: relative;
+  height: 100vh;
+}
+.slider__slides {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+.slider__control {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
+  border-radius: 50%;
+  background: var(--blanco);
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.slider__control--right {
+  left: 95%;
+}
+.slider__control:hover {
+  background-color: var(--verde-oscuro);
+}
+.slider__control-line {
+  position: absolute;
+  left: 23px;
+  top: 50%;
+  width: 3px;
+  height: 14px;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.slider__control-line:nth-child(2) {
+  -webkit-transform: translateY(1px) rotate(-135deg);
+          transform: translateY(1px) rotate(-135deg);
+}
+.slider__control--right .slider__control-line {
+  left: 37px;
+  -webkit-transform-origin: 1px 0;
+          transform-origin: 1px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.slider__control--right .slider__control-line:nth-child(2) {
+  -webkit-transform: translateY(1px) rotate(135deg);
+          transform: translateY(1px) rotate(135deg);
+}
+.slider__control-line:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--verde-oscuro);
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.slider__control:hover .slider__control-line:after {
+  background-color: var(--blanco);
+}
+.slider__control.a--rotation .slider__control-line:after {
+  -webkit-animation: arrowLineRotation 0.49s;
+          animation: arrowLineRotation 0.49s;
+}
+.slider__control.a--rotation .slider__control-line:nth-child(1):after {
+  -webkit-animation: arrowLineRotationRev 0.49s;
+          animation: arrowLineRotationRev 0.49s;
+}
+
+@-webkit-keyframes arrowLineRotation {
+  to {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes arrowLineRotation {
+  to {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes arrowLineRotationRev {
+  to {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+}
+@keyframes arrowLineRotationRev {
+  to {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+}
+.slide {
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150vmax;
+  height: 150vmax;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  -webkit-transition: -webkit-clip-path 0s 0.91s;
+  transition: -webkit-clip-path 0s 0.91s;
+  transition: clip-path 0s 0.91s;
+  transition: clip-path 0s 0.91s, -webkit-clip-path 0s 0.91s;
+  -webkit-clip-path: circle(30px at 120vw 50%);
+          clip-path: circle(30px at 120vw 50%);
+}
+.slide.s--prev {
+  -webkit-clip-path: circle(30px at 30vw 50%);
+          clip-path: circle(30px at 30vw 50%);
+}
+.slide.s--active {
+  z-index: 1;
+  -webkit-transition: -webkit-clip-path 1.3s;
+  transition: -webkit-clip-path 1.3s;
+  transition: clip-path 1.3s;
+  transition: clip-path 1.3s, -webkit-clip-path 1.3s;
+  -webkit-clip-path: circle(120vmax at 120vw 50%);
+          clip-path: circle(120vmax at 120vw 50%);
+}
+.slide.s--active.s--active-prev {
+  -webkit-clip-path: circle(120vmax at 30vw 50%);
+          clip-path: circle(120vmax at 30vw 50%);
+}
+.slide:nth-child(1) .slide__inner {
+  background-image: url(img/Pirineo.jpg);
+}
+.slide:nth-child(2) .slide__inner {
+  background-image: url(img/Sotonera.jpg);
+}
+.slide:nth-child(3) .slide__inner {
+  background-image: url(img/Peña.jpg);
+}
+.slide:nth-child(4) .slide__inner {
+  background-image: url(img/Loarre.jpg);
+}
+
+.slide__inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100vw;
+  height: 100vh;
+  margin-left: -50vw;
+  margin-top: -50vh;
+  background-size: cover;
+  background-position: center center;
+}
+.slide__inner:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+   
+}
+.slide__content {
+  position: relative;
+  top: 45%;
+  color: var(--blanco);
+  align-self: center;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-section h1{
+.slide__content h1{
   font-size: 3rem;
-  letter-spacing: 2px;
+}
+
+.slide__content .btn{
+  text-decoration: none;
+  color: var(--verde-oscuro);
+  background-color: var(--blanco);
+  width: 150px;
+  height: 40px;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1.2rem;
+
 }
 
 
 /* SCROLL */
 
 .header-cng{
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: var(--verde-oscuro);
   box-shadow: 0px 4px 5px 0px rgba(48, 48, 48, 0.2);
   transition: var(--trans);
+  height: 80px;
+  padding: 1rem 0;
 }
 
 .header-cng .logo{
@@ -194,9 +382,10 @@ section h1{
 
 /* LUGARES */
 
-.py-4{
-  padding: 4rem 0;
+#titulo-seccion{
+  margin-top: 100px;
 }
+
 
 .titulo{
   text-align: center;
@@ -212,6 +401,7 @@ section h1{
   justify-content: center;
   align-items: center;
   gap: 40px;
+  margin-bottom: 50px;
 }
 
 .lugares-item{
@@ -261,21 +451,47 @@ section h1{
 
 
 /* PÁGINA LUGAR */
-
-#img-lugar{
-  height: 250px;
-  width: 100%;
+#banner-canfranc{
+  padding-top: 20px;
   display: flex;
-  flex-direction: row;
-}
-
-#img-lugar img{
-  height: 100%;
+  max-width: 100%;
+  margin: auto;
+  margin-top: 100px;
 }
 
 #map { 
   height: 300px; 
   margin-bottom: 1.5rem;
+}
+
+/* SABER MÁS */
+.handwriting{
+  align-items: right;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+}
+
+#svg1{
+  stroke-dasharray: 3186;
+  animation: 3s fillSvg linear;
+  height: 100%;
+}
+
+#svg2{
+  stroke-dasharray: 3186;
+  animation: 3s fillSvg linear;
+  height: 100%;
+}
+
+@keyframes fillSvg{
+  0%{
+    stroke-dashoffset: 3186;
+  }
+  100%{
+    stroke-dashoffset: 0;
+  }
 }
 
 /* FOOTER */
@@ -294,12 +510,6 @@ footer::before{
   top: 0;
   left: 0;
   width: 100%;
-}
-
-footer .logo{
-  margin-bottom: 1.5rem;
-  display: block;
-  font-size: 2rem!important;
 }
 
 .footer-item{
@@ -351,7 +561,6 @@ footer .logo{
 
 /* RESPONSIVE */
 @media screen and (min-width: 768px){
-
   .footer-row{
     text-align: left;
     display: grid;
@@ -361,6 +570,12 @@ footer .logo{
 }
 
 @media screen and (min-width: 992px){
+  .header .container{
+    justify-content: space-between;
+  }
+  .header-cng .container{
+    justify-content: space-between;
+  }
   #header-show-btn{
     display: none;
   }
@@ -395,6 +610,4 @@ footer .logo{
   .footer-row{
       grid-template-columns: repeat(4, 1fr);
   }
-  
 }
-

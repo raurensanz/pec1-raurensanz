@@ -13,7 +13,7 @@
   <body>
     <header class="header-cng">
       <div class="container flex">
-        <a href="index.html" class="logo">Visita Huesca</a>
+        <a href="index.html" class="logo"><img src="img/logo.svg" alt="logo"></a>
 
         <button type="button" id="header-show-btn">
           <i class="fas fa-bars"></i>
@@ -44,12 +44,13 @@
     <main>
         <section>
             <div class="container">
-                <h2>Canfranc</h2>
-                <div id="img-lugar">
-                  <img src="img/Canfranc.jpg" alt="">
-                  <img src="img/Canfranc-2.jpg" alt="">
-                  <img src="img/Canfranc-3.jpg" alt="">
-                </div>
+              <picture id="banner-canfranc">
+                <source media="(min-width: 992px)" srcset="img/banner-canfranc-grande.png" />
+                <source srcset="img/banner-canfranc-pequeño.png" />
+                <img src="img/Canfranc.jpg" alt="Canfranc" />
+              </picture>
+
+                <h2 >Canfranc</h2>
 
                 <p>Sin duda, la Estación Internacional de Canfranc es el edificio insignia de este pueblo pirenaico. Fue inaugurada en las primeras décadas del siglo XX, es un bellísimo ejemplo de la arquitectura industrial de la época y está dotada de una elegancia sorprendente. En la actualidad se realizan visitas guiadas que muestran al visitante el esplendor que todavía conserva.</p>
                 <p>Dada su cercanía a la frontera con Francia, Canfranc ha ejercido históricamente una gran importancia estratégica y militar, de ahí la construcción de diversos fuertes o torreones, como la Torreta de Fusileros o el Fuerte de Coll de Ladrones.</p>
@@ -67,7 +68,7 @@
     <footer class="py-4">
       <div class="container footer-row">
         <div class="footer-item">
-          <a href="index.html" class="logo">Visita Huesca</a>
+          <a href="index.html" class="logo"><img src="img/logo.svg" alt="logo"></a>
           <p class="text">La aventura empieza aquí</p>
         </div>
 
@@ -105,9 +106,9 @@
         <div class = "footer-item">
           <h3>Lugares populares:</h3>
           <ul>
-            <li><a href = "#">Aínsa</a></li>
-            <li><a href = "#">Benasque</a></li>
-            <li><a href = "#">Loarre</a></li>
+            <li><a href="lugares.html">Lugares</a></li>
+              <li><a href="enlaces.html">Enlaces</a></li>
+              <li><a href="saber-mas.html">Saber más</a></li>
           </ul>
       </div>
       
